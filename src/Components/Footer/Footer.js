@@ -1,18 +1,17 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
-function Footer(props) {
+function Footer() {
 	return (
 		<Box
 			sx={{
-				position: 'fixed',
-				bottom: 0,
-				left: '50%'
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				pb: 2,
+				pt: 2
 			}}>
-			<Typography
-				variant='caption'
-				color='text.secondary'
-				{...props}>
+			<Typography variant='caption' color='text.secondary'>
 				{'Copyright © '}
 				{new Date().getFullYear()}
 			</Typography>

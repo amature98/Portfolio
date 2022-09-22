@@ -24,8 +24,7 @@ function GlobalStyles() {
 				},
 				a: {
 					color: 'inherit',
-					textDecoration: 'none',
-					cursor: 'crosshair'
+					textDecoration: 'none'
 				},
 			}}
 		/>

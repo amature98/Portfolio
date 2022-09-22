@@ -1,24 +1,21 @@
-import React from 'react';
-import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-
-const navPages = [
+import React from 'react'
+import HouseIcon from '@mui/icons-material/House';
+import InfoIcon from '@mui/icons-material/Info';
+import RingVolumeIcon from '@mui/icons-material/RingVolume';
+export const navPages = [
 	{
 		title: 'Home',
 		path: '/',
-		icon: <CottageOutlinedIcon />
+		icon: <HouseIcon />
 	},
 	{
 		title: 'About Me',
 		path: '/about-me',
-		icon: <PersonOutlinedIcon />
+		icon: <InfoIcon />
 	},
 	{
 		title: 'Contact Me',
 		path: '/contact-me',
-		icon: <CallOutlinedIcon />
-	}
+		icon: <RingVolumeIcon />
+	},
 ];
-
-export default navPages;

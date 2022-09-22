@@ -15,7 +15,7 @@ function Page({ children, title = '' }) {
 			<Navbar />
 			{children}
 			<BackToTopBtn />
-			<Footer sx={{ pt: 4 }} />
+			<Footer />
 		</Box>
 	);
 }

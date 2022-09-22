@@ -83,10 +83,10 @@ function About() {
 					<Button
 						component='a'
 						target='_blank'
-						href='https://drive.google.com/file/d/1MqUAPcaO3YaNOfena4UufnbaQE8dvdvL/view?usp=sharing'
+						href='https://drive.google.com/file/d/1_2gZ_wFWxRax5CK09ro6o_sGp-Ym4FM4/view?usp=sharing'
 						variant='contained'
 						color='secondary'
-						sx={{ mt: 2 }}
+						sx={{ mt: 2, mb: 2 }}
 						size='large'
 						endIcon={<DownloadIcon />}>
 						Resume

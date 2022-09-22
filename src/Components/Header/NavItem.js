@@ -16,18 +16,20 @@ import { Link } from 'react-router-dom';
 
 const NavItemStyle = styled(ListItemButton)(
 	({ theme }) => ({
-		textAlign: 'center',
 		height: 60,
 		textTransform: 'capitalize',
 		color: theme.palette.text.secondary
 	})
 );
 
-const NavItemIconStyle = styled(ListItemIcon)({
-	display: 'flex',
-	alignItems: 'center',
-	justifyContent: 'center'
-});
+const NavItemIconStyle = styled(ListItemIcon)(
+	({ theme }) => ({
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		color: theme.palette.text.secondary
+	})
+);
 
 function NavItem({ item, active }) {
 	const isActive = active(item.path);
@@ -50,9 +52,12 @@ function NavItem({ item, active }) {
 				sx={{
 					...(isActive && activeNavItemStyle)
 				}}>
-				{/* <NavItemIconStyle>{icon}</NavItemIconStyle> */}
+				<NavItemIconStyle>{icon}</NavItemIconStyle>
 				<ListItemText>
-					<Typography variant='subtitle1'> {title} </Typography>
+					<Typography variant='subtitle1'>
+						{' '}
+						{title}{' '}
+					</Typography>
 				</ListItemText>
 			</NavItemStyle>
 		</ListItem>

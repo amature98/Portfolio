@@ -1,8 +1,5 @@
 import { Socials as Sites } from './Socials';
-import {
-	Grid,
-	Icon
-} from '@mui/material';
+import { Grid, Icon } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 import React from 'react';
 
@@ -12,7 +9,7 @@ const Item = styled('a')(({ theme }) => ({
 		color: alpha(
 			theme.palette.text.secondary,
 			theme.palette.action.hoverOpacity
-		),
+		)
 	}
 }));
 
@@ -26,11 +23,10 @@ function Socials(props) {
 				justifyContent: 'center'
 			}}>
 			{Sites.map((site) => (
-				<Grid item>
+				<Grid item key={site.title}>
 					<Item
 						href={site.link}
 						target='_blank'
-						key={site.id}
 						elevation={3}>
 						<Icon> {site.icon} </Icon>
 					</Item>

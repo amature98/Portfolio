@@ -1,8 +1,13 @@
 import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import Image from '../Images/Pebble People - Avatar Backdrop.png';
 
 function NotFound() {
+	let navigate = useNavigate()
+	const handleError404 = () => {
+		navigate('/')
+	}
 	return (
 		<Box
 			sx={{
@@ -20,12 +25,10 @@ function NotFound() {
 				Okay this is awkward, but I think you might be lost
 			</Typography>
 			<Button
-				component='a'
-				href='/'
+				onClick={handleError404}
 				sx={{ mt: 2 }}
 				variant='contained'
 				color='secondary'>
-				{' '}
 				Let's Go Home
 			</Button>
 		</Box>
