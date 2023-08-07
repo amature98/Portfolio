@@ -9,6 +9,7 @@ import {
 	Toolbar,
 	useScrollTrigger,
 } from "@mui/material";
+import CssBaseline from '@mui/material/CssBaseline'
 import SortIcon from "@mui/icons-material/Sort";
 import CloseIcon from "@mui/icons-material/Close";
 import { alpha } from "@mui/material/styles";
@@ -45,14 +46,14 @@ function Navbar(props) {
 		path ? !!matchPath({ path, end: false }, pathname) : false;
 	return (
 		<Container maxWidth='xl'>
+			<CssBaseline />
 			<ElevateOnScroll {...props}>
-				<AppBar>
+				<AppBar color="transparent">
 					<Toolbar
 						disableGutters
 						sx={{
 							display: "flex",
 							justifyContent: "flex-end",
-							backgroundColor: "transparent",
 						}}>
 						<Box
 							sx={{
