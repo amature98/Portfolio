@@ -8,7 +8,7 @@ import BackToTopBtn from '../Components/Buttons/BackToTopBtn';
 
 function Page({ children, title = '' }) {
 	return (
-		<Box>
+		<Box >
 			<Helmet>
 				<title> {title} </title>
 			</Helmet>
@@ -21,6 +21,6 @@ function Page({ children, title = '' }) {
 }
 Page.propTypes = {
 	children: PropTypes.node.isRequired,
-	title: PropTypes.string
+	title: PropTypes.string,
 };
 export default Page;

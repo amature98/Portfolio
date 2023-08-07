@@ -1,5 +1,6 @@
 import React from 'react';
-import { GlobalStyles as GlobalThemeStyles} from '@mui/material';
+import { GlobalStyles as GlobalThemeStyles } from '@mui/material';
+import Image from '../Images/bgImg.jpg'
 
 function GlobalStyles() {
 	return (
@@ -22,6 +23,10 @@ function GlobalStyles() {
 				"#root": {
 					width: "100%",
 					height: "100%",
+					backgroundImage: `url(${Image})`,
+					backgroundRepeat: 'no-repeat',
+					backgroundPosition: 'center',
+					backgroundSize: 'cover',
 				},
 				a: {
 					color: "inherit",

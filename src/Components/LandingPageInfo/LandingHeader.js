@@ -1,7 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import { gsap } from "gsap";
 import React, { useEffect } from "react";
-import Image from "../../Images/bgImg.jpg";
 
 function LandingHeader() {
 	useEffect(() => {
@@ -18,14 +17,7 @@ function LandingHeader() {
 		});
 	});
 	return (
-		<Container
-			maxWidth='xl'
-			sx={{
-				backgroundImage: Image,
-				backgroundRepeat: "no-repeat",
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-			}}>
+		<Container maxWidth='xl'>
 			<Box sx={{ overflow: "hidden" }}>
 				<Typography className='text' variant='h1'>
 					<span>V</span>I<span>K</span>TO<span>R</span>

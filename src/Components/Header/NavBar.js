@@ -52,7 +52,7 @@ function Navbar(props) {
 						sx={{
 							display: "flex",
 							justifyContent: "flex-end",
-							// backgroundColor: "transparent",
+							backgroundColor: "transparent",
 						}}>
 						<Box
 							sx={{

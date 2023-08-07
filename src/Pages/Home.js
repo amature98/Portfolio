@@ -4,7 +4,8 @@ import Page from "./Page";
 
 function Home() {
 	return (
-		<Page title='Home'>
+		<Page
+			title='Home'>
 			<LandingHeader />
 		</Page>
 	);
