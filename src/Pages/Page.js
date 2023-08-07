@@ -8,7 +8,7 @@ import BackToTopBtn from '../Components/Buttons/BackToTopBtn';
 
 function Page({ children, title = '' }) {
 	return (
-		<Box sx={{ maxHeight: '100vh' }}>
+		<Box>
 			<Helmet>
 				<title> {title} </title>
 			</Helmet>

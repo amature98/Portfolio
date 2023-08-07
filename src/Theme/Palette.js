@@ -46,7 +46,7 @@ const palette = {
 	},
 	action: {
 		active: GREY[900],
-		hover: GREY[700],
+		hover: GREY[800],
 		selected: '#FCA311',
 		disabled: GREY[500],
 		disabledBackground: GREY[500],

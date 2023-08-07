@@ -1,19 +1,17 @@
 import { Socials as Sites } from './Socials';
 import { Grid, Icon } from '@mui/material';
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import React from 'react';
 
 const Item = styled('a')(({ theme }) => ({
 	padding: theme.spacing(1),
+	color:theme.palette.text.secondary,
 	'&:hover': {
-		color: alpha(
-			theme.palette.text.secondary,
-			theme.palette.action.hoverOpacity
-		)
+		color: theme.palette.text.primary,
 	}
 }));
 
-function Socials(props) {
+function Socials() {
 	return (
 		<Grid
 			container

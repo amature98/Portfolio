@@ -1,41 +1,38 @@
 import {
 	AppBar,
 	Box,
+	Button,
 	Container,
 	Drawer,
 	IconButton,
 	List,
 	Toolbar,
-	Typography,
-	useScrollTrigger
-} from '@mui/material';
-import SortIcon from '@mui/icons-material/Sort';
-import { alpha } from '@mui/material/styles';
-import React, { useState, cloneElement } from 'react';
-import PropTypes from 'prop-types';
-import {
-	Link,
-	matchPath,
-	useLocation
-} from 'react-router-dom';
-import NavItem from './NavItem';
-import { navPages } from './NavConfig';
-import Socials from '../SocialContacts/Socials.jsx';
+	useScrollTrigger,
+} from "@mui/material";
+import SortIcon from "@mui/icons-material/Sort";
+import CloseIcon from "@mui/icons-material/Close";
+import { alpha } from "@mui/material/styles";
+import React, { useState, cloneElement } from "react";
+import PropTypes from "prop-types";
+import { matchPath, useLocation } from "react-router-dom";
+import NavItem from "./NavItem";
+import { navPages } from "./NavConfig";
+import Socials from "../SocialContacts/Socials.jsx";
 
 function ElevateOnScroll(props) {
 	const { children, window } = props;
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
-		target: window ? window() : undefined
+		target: window ? window() : undefined,
 	});
 	return cloneElement(children, {
-		elevation: trigger ? 4 : 0
+		elevation: trigger ? 4 : 0,
 	});
 }
 ElevateOnScroll.propTypes = {
 	children: PropTypes.element.isRequired,
-	window: PropTypes.func
+	window: PropTypes.func,
 };
 
 function Navbar(props) {
@@ -45,9 +42,7 @@ function Navbar(props) {
 	};
 	const { pathname } = useLocation();
 	const match = (path) =>
-		path
-			? !!matchPath({ path, end: false }, pathname)
-			: false;
+		path ? !!matchPath({ path, end: false }, pathname) : false;
 	return (
 		<Container maxWidth='xl'>
 			<ElevateOnScroll {...props}>
@@ -55,32 +50,18 @@ function Navbar(props) {
 					<Toolbar
 						disableGutters
 						sx={{
-							ml: 4,
-							mr: 4,
-							display: 'flex',
-							justifyContent: 'space-between',
-							backgroundColor: 'transparent'
+							display: "flex",
+							justifyContent: "flex-end",
+							// backgroundColor: "transparent",
 						}}>
-						<Typography
-							variant='subtitle1'
-							noWrap
-							component={Link}
-							to='/'
-							sx={{
-								color: 'text.secondary'
-							}}>
-							VIK.TOR
-						</Typography>
 						<Box
 							sx={{
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center'
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
 							}}>
 							<Box>
 								<IconButton
-									edge='start'
-									size='large'
 									color='secondary'
 									aria-label='header menu'
 									aria-controls='menu-appbar'
@@ -95,31 +76,33 @@ function Navbar(props) {
 								open={toggleDrawer}
 								onClose={handleToggleDrawer}
 								ModalProps={{
-									keepMounted: true
+									keepMounted: true,
 								}}
 								sx={{
-									display: 'block',
-									'& .MuiDrawer-paper': {
-										backdropFilter: 'blur(2.5px)',
+									display: "flex",
+									"& .MuiDrawer-paper": {
+										backdropFilter: "blur(2.5px)",
 										backgroundColor: (theme) =>
-											alpha(
-												theme.palette.background.default,
-												0.5
-											),
-										boxSizing: 'border-box',
-										width: '50%',
-										display: 'flex',
-										justifyContent: 'center',
-										alignItems: 'center'
-									}
+											alpha(theme.palette.background.default, 0.5),
+										boxSizing: "border-box",
+										width: "100vw",
+										height: "100vh",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center",
+									},
 								}}>
+								<Button
+									variant='contained'
+									color='secondary'
+									sx={{ borderRadius: "50%", mb: 3, p: "2vw" }}
+									size='large'
+									onClick={handleToggleDrawer}>
+									<CloseIcon sx={{ fontSize: 40 }} />
+								</Button>
 								<List>
 									{navPages.map((item) => (
-										<NavItem
-											key={item.title}
-											item={item}
-											active={match}
-										/>
+										<NavItem key={item.title} item={item} active={match} />
 									))}
 								</List>
 								<Socials />

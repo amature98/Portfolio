@@ -1,62 +1,45 @@
 import {
 	ListItem,
 	ListItemButton,
-	ListItemIcon,
 	ListItemText,
-	Typography
-} from '@mui/material';
-import {
-	useTheme,
-	alpha,
-	styled
-} from '@mui/material/styles';
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+	Typography,
+} from "@mui/material";
+import { useTheme, alpha, styled } from "@mui/material/styles";
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const NavItemStyle = styled(ListItemButton)(
-	({ theme }) => ({
-		height: 60,
-		textTransform: 'capitalize',
-		color: theme.palette.text.secondary
-	})
-);
-
-const NavItemIconStyle = styled(ListItemIcon)(
-	({ theme }) => ({
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		color: theme.palette.text.secondary
-	})
-);
+const NavItemStyle = styled(ListItemButton)(({ theme }) => ({
+	textTransform: "capitalize",
+	color: theme.palette.text.secondary,
+}));
 
 function NavItem({ item, active }) {
 	const isActive = active(item.path);
-	const { title, path, icon } = item;
+	const { title, path } = item;
 	const theme = useTheme();
 	const activeNavItemStyle = {
-		color: 'text-secondary',
+		color: "text-secondary",
 		bgColor: alpha(
 			theme.palette.text.secondary,
 			theme.palette.action.selectedOpacity
 		),
-		'&before': { display: 'block' }
+		"&before": { display: "block" },
 	};
 	return (
-		<ListItem disablePadding>
+		<ListItem>
 			<NavItemStyle
+				alignItems='center'
 				disableGutters
 				component={Link}
 				to={path}
 				sx={{
-					...(isActive && activeNavItemStyle)
+					...(isActive && activeNavItemStyle),
 				}}>
-				<NavItemIconStyle>{icon}</NavItemIconStyle>
 				<ListItemText>
-					<Typography variant='subtitle1'>
-						{' '}
-						{title}{' '}
+					<Typography variant='h2' sx={{ textAlign: "center" }}>
+						{" "}
+						{title}{" "}
 					</Typography>
 				</ListItemText>
 			</NavItemStyle>
@@ -65,7 +48,7 @@ function NavItem({ item, active }) {
 }
 NavItem.propTypes = {
 	item: PropTypes.object,
-	active: PropTypes.func
+	active: PropTypes.func,
 };
 
 export default NavItem;

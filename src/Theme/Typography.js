@@ -1,104 +1,108 @@
-function pxToRem(value) {
-	return `${value / 16}rem`;
+function fluidTypo(value) {
+	return `${value}vw`;
 }
 
 function responsiveFontSizes({ sm, md, lg }) {
 	return {
-		'@media (min-width:600px)': {
-			fontSize: pxToRem(sm)
+		"@media (min-width:600px)": {
+			fontSize: fluidTypo(sm),
 		},
-		'@media (min-width:900px)': {
-			fontSize: pxToRem(md)
+		"@media (min-width:900px)": {
+			fontSize: fluidTypo(md),
 		},
-		'@media (min-width:1200px)': {
-			fontSize: pxToRem(lg)
-		}
+		"@media (min-width:1200px)": {
+			fontSize: fluidTypo(lg),
+		},
 	};
 }
 
-const FONT_PRIMARY = 'Raleway, sans-serif';
-const FONT_HEADER = 'Ubuntu, sans-serif';
+const FONT_PRIMARY = "Raleway, sans-serif";
+const FONT_SECONDARY = "Poiret One cursive";
+const FONT_TERTIARY = "Major Mono Display, monospace";
 
 const typography = {
 	fontFamily: FONT_PRIMARY,
-	fontWeightRegular: 300,
-	fontWeightMedium: 600,
-	fontWeightBold: 800,
 	h1: {
-		fontFamily: FONT_HEADER,
-		fontWeight: 700,
-		lineHeight: 64 / 64,
-		fontSize: pxToRem(75),
-		letterSpacing: '.5rem',
-		...responsiveFontSizes({ sm: 90, md: 120, lg: 148 })
+		fontFamily: FONT_PRIMARY,
+		fontSize: fluidTypo(23.5),
+		...responsiveFontSizes({ sm: 24.5, md: 25, lg: 16.0 }),
 	},
 	h2: {
-		fontFamily: FONT_HEADER,
-		fontWeight: 600,
-		lineHeight: 1.5,
-		fontSize: pxToRem(32),
-		...responsiveFontSizes({ sm: 40, md: 44, lg: 48 })
+		fontFamily: FONT_PRIMARY,
+		fontWeight: 300,
+		lineHeight: 1.0,
+		fontSize: fluidTypo(7.0),
+		...responsiveFontSizes({ sm: 7.5, md: 6.5, lg: 4.5 }),
 	},
 	h3: {
-		fontWeight: 400,
+		fontFamily: FONT_TERTIARY,
 		lineHeight: 1,
-		fontSize: pxToRem(24),
-		...responsiveFontSizes({ sm: 26, md: 30, lg: 32 })
+		fontSize: fluidTypo(14),
+		...responsiveFontSizes({ sm: 16.5, md: 14.5, lg: 16 }),
 	},
 	h4: {
-		fontWeight: 500,
+		fontWeight: 300,
 		lineHeight: 1.5,
-		fontSize: pxToRem(20),
-		...responsiveFontSizes({ sm: 20, md: 24, lg: 24 })
+		fontSize: fluidTypo(7.25),
+		...responsiveFontSizes({ sm: 4, md: 3, lg: 2.25 }),
 	},
 	h5: {
-		fontWeight: 500,
+		fontWeight: 100,
 		lineHeight: 1.5,
-		fontSize: pxToRem(18),
-		...responsiveFontSizes({ sm: 19, md: 20, lg: 20 })
+		fontSize: fluidTypo(4.25),
+		...responsiveFontSizes({ sm: 2.5, md: 1.75, lg: 2.25 }),
 	},
 	h6: {
-		fontWeight: 600,
+		fontWeight: 100,
 		lineHeight: 28 / 18,
-		fontSize: pxToRem(17),
-		...responsiveFontSizes({ sm: 20, md: 20, lg: 20 })
+		fontSize: fluidTypo(4.25),
+		...responsiveFontSizes({ sm: 3, md: 2.5, lg: 2.5 }),
 	},
 	subtitle1: {
-		fontWeight: 400,
+		fontWeight: 300,
 		lineHeight: 1.5,
-		fontSize: pxToRem(24),
-		letterSpacing: '.3rem'
+		fontSize: fluidTypo(2.0),
+		...responsiveFontSizes({ sm: 2.75, md: 1.75, lg: 2.0 }),
+		letterSpacing: ".3rem",
 	},
 	subtitle2: {
-		fontWeight: 600,
+		fontWeight: 300,
 		lineHeight: 22 / 14,
-		fontSize: pxToRem(22)
+		fontSize: fluidTypo(4),
 	},
 	body1: {
+		fontFamily: FONT_SECONDARY,
 		lineHeight: 1.5,
-		fontSize: pxToRem(24)
+		fontWeight: 100,
+		fontSize: fluidTypo(3.0),
+		...responsiveFontSizes({ sm: 2.5, md: 2.0, lg: 1.5 }),
 	},
 	body2: {
+		fontFamily: FONT_SECONDARY,
 		lineHeight: 22 / 14,
-		fontSize: pxToRem(16)
+		fontWeight: 400,
+		fontSize: fluidTypo(3.5),
+		...responsiveFontSizes({ sm: 2, md: 1.5, lg: 1.25 }),
 	},
 	caption: {
 		lineHeight: 1.5,
-		fontSize: pxToRem(12)
+		fontSize: fluidTypo(1.5),
+		...responsiveFontSizes({ sm: 1.5, md: 1.5, lg: 1.0 }),
 	},
 	overline: {
 		fontWeight: 700,
 		lineHeight: 1.5,
-		fontSize: pxToRem(12),
+		fontSize: fluidTypo(12),
 		letterSpacing: 1.1,
-		textTransform: 'uppercase'
+		textTransform: "uppercase",
 	},
 	button: {
-		fontWeight: 400,
+		fontWeight: 100,
 		lineHeight: 24 / 14,
-		fontSize: pxToRem(16),
-		textTransform: 'capitalize'
-	}
+		fontSize: fluidTypo(2),
+		textTransform: "capitalize",
+		...responsiveFontSizes({ sm: 2.0, md: 1.5, lg: 1.5 }),
+	},
 };
 
 export default typography;

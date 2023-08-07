@@ -13,7 +13,7 @@ import { webDevSkills as skills } from '../Components/Skills/Skills';
 function About() {
 	return (
 		<Page title='About Me'>
-			<Container xl sx={{ textAlign: 'center' }}>
+			<Container sx={{ textAlign: 'center' }}>
 				<Container>
 					<Typography
 						variant='h2'

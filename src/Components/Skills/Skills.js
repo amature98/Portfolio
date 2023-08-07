@@ -1,47 +1,37 @@
-const idGen = () => {
-	const id = Math.floor(Math.random() * 100);
-	return id;
-};
-export const skills = [
-	{ title: 'Web Development', id: idGen },
-	{ title: 'Graphic Design', id: idGen },
-	{ title: 'Art Enthusiast', id: idGen }
-];
-
 export const webDevSkills = [
 	{
-		title: 'HTML/CSS',
+		title: "HTML/CSS",
 		level: 90,
-		id: idGen
+		id: 1,
 	},
 	{
-		title: 'Javascript',
+		title: "Javascript",
 		level: 80,
-		id: idGen
+		id: 2,
 	},
 	{
-		title: 'React Framework',
+		title: "React Framework",
 		level: 50,
-		id: idGen
+		id: 3,
 	},
 	{
-		title: 'Material UI',
+		title: "Material UI",
 		level: 90,
-		id: idGen
+		id: 4,
 	},
 	{
-		title: 'Node.js',
+		title: "Node.js",
 		level: 75,
-		id: idGen
+		id: 5,
 	},
 	{
-		title: 'MongoDB',
+		title: "MongoDB",
 		level: 30,
-		id: idGen
+		id: 6,
 	},
 	{
-		title: 'Python',
+		title: "Python",
 		level: 25,
-		id: idGen
-	}
+		id: 7,
+	},
 ];
