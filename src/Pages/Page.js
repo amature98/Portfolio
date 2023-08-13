@@ -1,14 +1,26 @@
-import { Box } from '@mui/material';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import Footer from '../Components/Footer/Footer';
-import React from 'react';
-import Navbar from '../Components/Header/NavBar';
-import BackToTopBtn from '../Components/Buttons/BackToTopBtn';
+import { Box } from "@mui/material";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import Footer from "../Components/Footer/Footer";
+import React from "react";
+import Navbar from "../Components/Header/NavBar";
+import BackToTopBtn from "../Components/Buttons/BackToTopBtn";
+import Image from "../Images/TexturelabsPaper.jpg";
 
-function Page({ children, title = '' }) {
+function Page({ children, title = "" }) {
 	return (
-		<Box >
+		<Box
+			sx={{
+				display: "flex",
+				flexWrap: "wrap",
+				alignItems: "center",
+				width: "100%",
+				height: "100%",
+				background: `url(${Image})`,
+				backgroundRepeat: 'no-repeat',
+				backgroundPosition: 'center',
+				backgroundSize: 'cover',
+			}}>
 			<Helmet>
 				<title> {title} </title>
 			</Helmet>

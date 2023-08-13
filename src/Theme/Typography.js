@@ -97,11 +97,12 @@ const typography = {
 		textTransform: "uppercase",
 	},
 	button: {
+		fontFamily: FONT_TERTIARY,
 		fontWeight: 100,
 		lineHeight: 24 / 14,
 		fontSize: fluidTypo(2),
-		textTransform: "capitalize",
-		...responsiveFontSizes({ sm: 2.0, md: 1.5, lg: 1.5 }),
+		textTransform: "uppercase",
+		...responsiveFontSizes({ sm: 3.0, md: 1.0, lg: 1.5 }),
 	},
 };
 

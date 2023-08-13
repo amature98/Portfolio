@@ -9,10 +9,10 @@ function LandingHeader() {
 			y: 150,
 			opacity: 0,
 			ease: "power1.inout",
-			delay: 0.5,
+			delay: 0.4,
 			duration: 2.5,
 			stagger: {
-				amount: 0.2,
+				amount: 1,
 			},
 		});
 	});
