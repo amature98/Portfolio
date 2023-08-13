@@ -17,7 +17,15 @@ function LandingHeader() {
 		});
 	});
 	return (
-		<Container maxWidth='xl'>
+		<Container
+			maxWidth='xl'
+			sx={{
+				display: "flex",
+				flexWrap: "wrap",
+				alignItems: "center",
+				width: "100%",
+				height: "100%",
+			}}>
 			<Box sx={{ overflow: "hidden" }}>
 				<Typography className='text' variant='h1'>
 					<span>V</span>I<span>K</span>TO<span>R</span>

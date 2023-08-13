@@ -11,9 +11,6 @@ function Page({ children, title = "" }) {
 	return (
 		<Box
 			sx={{
-				display: "flex",
-				flexWrap: "wrap",
-				alignItems: "center",
 				width: "100%",
 				height: "100%",
 				background: `url(${Image})`,
