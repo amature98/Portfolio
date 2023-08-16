@@ -11,8 +11,8 @@ const GREY = {
 	900: '#161C24'
 };
 const PRIMARY = {
-	main: '#26282B',
-	dark: '#353941'
+	main: "#040509",
+	dark: "#353941",
 };
 
 const SECONDARY = {
@@ -42,6 +42,7 @@ const palette = {
 	text: {
 		primary: '#E5E5E5',
 		secondary: SECONDARY.main,
+		tertiary: '#ffffff',
 		disabled: GREY[500]
 	},
 	action: {
@@ -51,7 +52,7 @@ const palette = {
 		disabled: GREY[500],
 		disabledBackground: GREY[500],
 		focus: GREY[500],
-		hoverOpacity: 0.15,
+		hoverOpacity: 0.05,
 		disabledOpacity: 0.48
 	}
 };

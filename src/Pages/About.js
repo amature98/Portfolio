@@ -1,17 +1,33 @@
-import {
-	Container,
-	Grid,
-	CircularProgress,
-	Typography,
-	Button,
-	Card,
-} from "@mui/material";
+import { Container, Grid, Typography, Button, Card } from "@mui/material";
+import { alpha, styled } from "@mui/material/styles";
 import DownloadIcon from "@mui/icons-material/Download";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Page from "./Page";
+import moment from "moment-timezone";
 import { webDevSkills as skills } from "../Components/Skills/Skills";
 
+const StyledCard = styled(Card)(({ theme }) => ({
+	margin: " 8vh 0vw",
+	padding: "4vw",
+	borderRadius: "70px",
+	backgroundColor: alpha(
+		theme.palette.text.tertiary,
+		theme.palette.action.hoverOpacity
+	),
+	backdropFilter: "blur(10px)",
+	boxShadow: "10px -10px 40px #9d5a0b,-10px 10px 40px #ffae12",
+}));
+
 function About() {
+	const [currentTime, setCurrentTime] = useState(moment().tz("Africa/Nairobi"));
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentTime(moment().tz("Africa/Nairobi"));
+		}, 1000);
+		return () => {
+			clearInterval(interval);
+		};
+	});
 	return (
 		<Page title='About Me'>
 			<Container
@@ -25,10 +41,10 @@ function About() {
 					<Typography variant='h1'>
 						<span>ABOUT ME</span>
 					</Typography>
-					<Typography variant='body2'>
-						{new Date().getFullYear() - 1998} years | Nairobi | Kenya
+					<Typography variant='body1'>
+						{currentTime.format("HH:mm:ss")} | Nairobi | Kenya
 					</Typography>
-					<Card>
+					<StyledCard>
 						<Typography variant='body1'>
 							I am Fullstack Web developer and Tech enthusiast with a constant
 							view of creating solutions through technolgy.
@@ -47,17 +63,12 @@ function About() {
 						</Typography>
 						<Grid container spacing={2}>
 							{skills.map((skill) => (
-								<Grid
-									item
-									xs={12}
-									md={6}
-									key={skill.id}
-									sx={{}}>
+								<Grid item xs={12} key={skill.id}>
 									<Typography variant='body2'>{skill.title}</Typography>
 								</Grid>
 							))}
 						</Grid>
-					</Card>
+					</StyledCard>
 
 					<Button
 						component='a'
