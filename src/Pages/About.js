@@ -12,10 +12,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
 	borderRadius: "70px",
 	backgroundColor: alpha(
 		theme.palette.text.tertiary,
-		theme.palette.action.hoverOpacity
+		0.05
 	),
-	backdropFilter: "blur(10px)",
-	boxShadow: "10px -10px 40px #9d5a0b,-10px 10px 40px #ffae12",
+	backdropFilter: "blur(8px)",
+	boxShadow: "0px 0px 40px #ffae12",
 }));
 
 function About() {
@@ -45,23 +45,32 @@ function About() {
 						{currentTime.format("HH:mm:ss")} | Nairobi | Kenya
 					</Typography>
 					<StyledCard>
-						<Typography variant='body1'>
-							I am Fullstack Web developer and Tech enthusiast with a constant
-							view of creating solutions through technolgy.
-							<br />I am a student of the lives of Leornardo da Vinci and Steve
-							Jobs who were believers of art and technology.
-							<br />
-							Art is broad and so I love exploring its different breadths and
-							depths.
-						</Typography>
 						<Typography
-							variant='subtitle1'
+							variant='body2'
 							sx={{
 								color: "text.secondary",
 							}}>
-							My Skills
+							Bio
 						</Typography>
-						<Grid container spacing={2}>
+						<Typography variant='body2'>
+							Viktor Kinyua is a Web developer and Tech enthusiast based in
+							Nairobi, Kenya with a constant view of creating solutions through
+							technology.
+							I am a passionate about the arts with great inspiration from
+							the lives of Leornardo da Vinci and Steve Jobs who were believers
+							of art and technology.
+							I am currently open to full time / freelance opportunities
+							in the creative web development and art. I am also exploring the 
+							field of Data Science. 
+						</Typography>
+						<Typography
+							variant='body2'
+							sx={{
+								color: "text.secondary",
+							}}>
+							Skills
+						</Typography>
+						<Grid container spacing={1}>
 							{skills.map((skill) => (
 								<Grid item xs={12} key={skill.id}>
 									<Typography variant='body2'>{skill.title}</Typography>
